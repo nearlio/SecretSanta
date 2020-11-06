@@ -9,13 +9,18 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) throws IOException{
         
-        String[] sender = {"Sofia", "Kenny", "Kiera", "Wilson", "Nick", "Gemaris", "Hart"};
-        String[] rec = {"Sofia", "Kenny", "Kiera", "Wilson", "Nick", "Gemaris", "Hart"};
+        String[] sender = {"A", "B", "C", "D", "E", "F", "G"};
+        String[] rec = {"A", "B", "C", "D", "E", "F", "G"};
 
         // Shuffle the elements in the array
         List<String> sendSant = Arrays.asList(sender);
         List<String> recSant = Arrays.asList(rec);
         
+        shuffle(sendSant, recSant);
+        print(sendSant, recSant);
+    }//main
+    
+    public static void shuffle(List<String> sendSant, List<String> recSant){
         Collections.shuffle(sendSant);
         Collections.shuffle(recSant);
         
@@ -24,10 +29,7 @@ public class Main {
                 Collections.swap(sendSant, counter, counter+1);
             }//if
         }//for
-        
-        print(sendSant, recSant);
-    }//main
-    
+    }//shuffle
     public static void print(List<String> sender, List<String> rec){
         try{
             File fout = new File("santa.txt");
